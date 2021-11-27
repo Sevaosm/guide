@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Последние обновления{% endblock %}
+{% block header %}Последние обновления на сайте{% endblock %}
+{% block content %}
+
+    <br> <br> <br>
+    {% for attraction in attractions %}
+    <h3>
+        Достопримечательность: {{ attraction.name }}
+    </h3>
+    <p>Описание: {{ attraction.description }} | <a href="attraction/{{ attraction.id }}/">Подробнее</a></p>
+    {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+
+{% endblock %}

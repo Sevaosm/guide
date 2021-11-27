@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Последние обновления{% endblock %}
+{% block header %}Последние обновления на сайте{% endblock %}
+{% block content %}
+
+{% load static %}
+    <br> <br> <br>
+    <img class="w-50 mx-auto d-block" src="{% static image %}" alt="photo">
+    <h3>
+        Достопримечательность: {{ name }}
+    </h3>
+    <p>{{ description }}</p>
+    <a href="/">На главную</a>
+    {% if not forloop.last %}<hr>{% endif %}
+
+{% endblock %}
